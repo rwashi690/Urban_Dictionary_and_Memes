@@ -4,10 +4,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css"/>
     <title>Urban Dictionary and Memes</title>
+
 </head>
 <body>
+    <!-- Header -->
+    <header class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4">The Ultimate Urban Dictionary</h1>
+          <p class="lead">Lookup trendy words to keep up with your friends</p>
+        </div>
+    </header>
+    <!-- Main website content -->
+    <div class="container">
+        <!-- Holds search bar and quote box -->
+        <div class="row">
+            <div class="col-5" id="search_bar"></div>
+            <div class="col-7" id="quote"></div>
+        </div>
+        <!-- Previous searches and memes -->
+        <div class="row">
+            <div class="col-5" id="previous_searches"></div>
+            <div class="col-7" id="meme"></div>
+        </div>
+    </div>
+
+<!-- Footer -->
+<footer class="bg-light text-center text-lg-start">
+    <div class="text-center p-3">
+        2022
+      </div>
+</footer>
 
 <!-- Adding the JavaScript File to the index.html -->
 <script src="./assets/js/script.js"></script>
