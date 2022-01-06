@@ -1,6 +1,11 @@
 
-
 var quoteBox = document.getElementById("quote");
+var searchInput = document.getElementById('search-input');
+var searchBtn = document.getElementById('search-button')
+
+searchBtn.addEventListener('click', function() {
+	console.log('we clicking');
+	});
 
 
 // Currently to test these functions use the console : example -> urbanDictionary('EnterWord_as_String')
