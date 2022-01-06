@@ -90,3 +90,6 @@ fetch("https://giphy.p.rapidapi.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&q="+mem
 	console.error(err);
 });
 }
+
+
+giphyRequest("run")
