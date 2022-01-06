@@ -13,7 +13,7 @@ Bootstrap
 Javascript 
 jQuery 
 Urban Dictionary API
-9gag memes API
+Giphy API
 
 Screenshot: 
 
