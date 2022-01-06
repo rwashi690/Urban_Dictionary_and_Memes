@@ -14,11 +14,17 @@ fetch("https://mashape-community-urban-dictionary.p.rapidapi.com/define?term="+w
 })
 .then(data =>{
     console.log(data);
+	console.log(data.list[0].definition);
+	var quoteBox = document.getElementById("quote");
+	quoteBox.textContent = data.list[0].definition;
 })
 .catch(err => {
 	console.error(err);
 });
+
 }
+urbanDictionary("run");
+
 
 // Creates a function that uses the fetch request to obtain a word from Giphy Api
 
