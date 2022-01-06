@@ -11,3 +11,12 @@ footer {
     background-color: rgb(245, 245, 247);
 }
 
+/* blockquote */
+#quote {
+    background-color: rgb(230, 220, 220);
+    height: 100px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
