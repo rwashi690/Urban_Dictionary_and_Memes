@@ -87,7 +87,6 @@ fetch("https://giphy.p.rapidapi.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&q="+mem
     console.log(data);
 	var memeBox = document.getElementById("meme");
     memeBox.setAttribute("src", data.data[0].images.original.url);
-
 })
 .catch(err => {
 	console.error(err);
@@ -95,4 +94,4 @@ fetch("https://giphy.p.rapidapi.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&q="+mem
 }
 
 
-giphyRequest("run")
+giphyRequest("run");
