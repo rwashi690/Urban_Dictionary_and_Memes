@@ -16,7 +16,7 @@ fetch("https://mashape-community-urban-dictionary.p.rapidapi.com/define?term="+w
     console.log(data);
 	console.log(data.list[0].definition);
 	var quoteBox = document.getElementById("quote");
-	quoteBox.textContent = data.list[0].definition;
+	quoteBox.textContent = wordRequested + ": " + data.list[0].definition;
 })
 .catch(err => {
 	console.error(err);
