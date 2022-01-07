@@ -3,8 +3,11 @@ var quoteBox = document.getElementById("quote");
 var searchInput = document.getElementById('search-input');
 var searchBtn = document.getElementById('search-button')
 
+
 searchBtn.addEventListener('click', function() {
 	console.log('we clicking');
+	console.log(searchInput.value)
+	searchBox(searchInput.value);
 	});
 
 
@@ -44,9 +47,6 @@ fetch("https://mashape-community-urban-dictionary.p.rapidapi.com/define?term="+w
 	console.error(err);
 });
 }
-
-urbanDictionary("run")
-
 
 // Modified from https://stackoverflow.com/questions/10982913/javascript-how-to-show-each-element-of-array-on-a-new-line
 
@@ -89,5 +89,11 @@ fetch("https://giphy.p.rapidapi.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&q="+mem
 });
 }
 
+// Had to remove this functionality for now so it only takes the input from the form
+// urbanDictionary("run")
+// giphyRequest("run");
 
-giphyRequest("run");
+function searchBox(searchInput){
+	urbanDictionary(searchInput)
+	giphyRequest(searchInput);
+}
