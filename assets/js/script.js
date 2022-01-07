@@ -38,6 +38,12 @@ function updateSearchHistory(){
 
 
 
+searchBtn.addEventListener('click', function() {
+	console.log('we clicking');
+	console.log(searchInput.value)
+	searchBox(searchInput.value);
+	});
+
 
 // Currently to test these functions use the console : example -> urbanDictionary('EnterWord_as_String')
 // Creates a function that uses the fetch request to obtain a word from Urban Dictionary Api and display it on the page
@@ -60,28 +66,21 @@ fetch("https://mashape-community-urban-dictionary.p.rapidapi.com/define?term="+w
 	// Create an empty list of definitions
 	var definitions =[]
 
-	//Create tage to add to HTML 
-	// var definitionTag = document.createElement('li');
-
 	for (let i=0; i < 2; i++){
 		definitions += data.list[i].definition;
+		var definitionTag = document.createElement("li");
+		definitionTag.textContent = data.list[i].definition;
+		quoteBox.appendChild(definitionTag); 
 }
-	// for (let i=0; i<definitions.length; i++){
-	// 	definitions[i].appendChild(definitionTag);
-	// }
-	// quoteBox.appendChild(definitionTag);
-	// // quoteBox.textContent = wordRequested;
-	// Make the data appear in the quote box
-	quoteBox.textContent = wordRequested + ": " + definitions;
-	
+// to display the word requested above its definition
+	var displayWord = document.getElementById("word-requested"); 
+	displayWord.textContent = wordRequested;
+
 })
 .catch(err => {
 	console.error(err);
 });
 }
-
-urbanDictionary("run")
-
 
 // Modified from https://stackoverflow.com/questions/10982913/javascript-how-to-show-each-element-of-array-on-a-new-line
 
@@ -124,4 +123,11 @@ fetch("https://giphy.p.rapidapi.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&q="+mem
 });
 }
 
-giphyRequest("run");
+// Had to remove this functionality for now so it only takes the input from the form
+// urbanDictionary("run")
+// giphyRequest("run");
+
+function searchBox(searchInput){
+	urbanDictionary(searchInput)
+	giphyRequest(searchInput);
+}
