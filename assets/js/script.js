@@ -29,20 +29,16 @@ fetch("https://mashape-community-urban-dictionary.p.rapidapi.com/define?term="+w
 	// Create an empty list of definitions
 	var definitions =[]
 
-	//Create tage to add to HTML 
-	// var definitionTag = document.createElement('li');
-
 	for (let i=0; i < 2; i++){
 		definitions += data.list[i].definition;
+		var definitionTag = document.createElement("li");
+		definitionTag.textContent = data.list[i].definition;
+		quoteBox.appendChild(definitionTag); 
 }
-	// for (let i=0; i<definitions.length; i++){
-	// 	definitions[i].appendChild(definitionTag);
-	// }
-	// quoteBox.appendChild(definitionTag);
-	// // quoteBox.textContent = wordRequested;
-	// Make the data appear in the quote box
-	quoteBox.textContent = wordRequested + ": " + definitions;
-	
+// to display the word requested above its definition
+	var displayWord = document.getElementById("word-requested"); 
+	displayWord.textContent = wordRequested;
+
 })
 .catch(err => {
 	console.error(err);
