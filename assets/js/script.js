@@ -16,7 +16,7 @@ searchBtn.addEventListener('click', function (event) {
 
 // function for clearing the search bar 
 function clearSearch() { 
-	searchInput.value = "Search any word";
+	searchInput.value = ('');
 }
 searchBtn.addEventListener('click', clearSearch); 
 
