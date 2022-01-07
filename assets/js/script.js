@@ -31,7 +31,7 @@ function renderSearchHistory() {
 	
 }
 
-//The following function will update the search historyUi
+//The following function will update the search history list.
 function updateSearchHistory(){
 	
 }
