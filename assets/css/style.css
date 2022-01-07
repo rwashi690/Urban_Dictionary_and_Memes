@@ -29,3 +29,7 @@ footer {
     list-style: none;
     justify-content: center;
 }
+
+.hide{
+    display: none;
+}

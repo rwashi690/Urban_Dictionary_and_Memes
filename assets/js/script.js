@@ -2,6 +2,7 @@ var searchList = document.getElementById('search-list')
 var quoteBox = document.getElementById("quote");
 var searchInput = document.getElementById('search-input');
 var searchBtn = document.getElementById('search-button');
+var previousSearch = document.getElementById('previous_searches');
 
 var currentHistory = [];
 
@@ -34,6 +35,7 @@ function storeSearchHistory(search) {
 function displayHistory() {
 	//this area is for removing the duplicate searches
 	if ('history' in localStorage) {
+		previousSearch.classList.remove('hide');
 	}
 	for (var i = 0; i < currentHistory.length; i++) {
 		var li = document.createElement('li');
