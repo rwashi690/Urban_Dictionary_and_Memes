@@ -1,3 +1,7 @@
+* {
+    list-style: none;
+}
+
 /* definition box */
 ul li {
     margin-top: 10px;
@@ -26,6 +30,18 @@ footer {
     margin-bottom: 15px;
     display: flex;
     flex-direction: column;
-    list-style: none;
     justify-content: center;
+}
+
+/* previous searches box */
+#previous_searches {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 380px;
+    font-size: 18px;
+}
+
+#search-list {
+    padding-left: 15px;
 }
