@@ -2,6 +2,10 @@
     list-style: none;
 }
 
+/* search box */
+#search_bar {
+    margin-right: 10px;
+}
 
 /* definition box */
 ul li {
