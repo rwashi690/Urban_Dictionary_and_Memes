@@ -9,14 +9,14 @@ var currentHistory = [];
 searchBtn.addEventListener('click', function (event) {
 	event.preventDefault();
 	var search = searchInput.value;
-
-	storeSearchHistory();
+	console.log(search);
+	storeSearchHistory(search);
 });
 
 //The following function renders the search history in a list.
-function storeSearchHistory() {
-	currentHistory.push(searchInput.value);
-
+function storeSearchHistory(search) {
+	currentHistory.push(search);
+	console.log('am i inside of store Search History?')
 	if ('history' in localStorage) {
 		let recentSearches = JSON.parse(localStorage.getItem('history'));
 
@@ -32,11 +32,10 @@ function storeSearchHistory() {
 
 //The following function will update the search history list.
 function displayHistory() {
-	// this area is for removing the duplicate searches
+	//this area is for removing the duplicate searches
 	if ('history' in localStorage) {
 	}
-
-	for (var i = 0; 5; i++) {
+	for (var i = 0; i < currentHistory.length; i++) {
 
 		var li = document.createElement('li');
 		li.textContent = currentHistory[i];
