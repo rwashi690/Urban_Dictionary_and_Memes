@@ -26,25 +26,31 @@
     <main>
         <div class="container">
             <!-- Holds search bar and quote box -->
-            <div class="row">
-                <div class="col-5" id="search_bar">
+           <div class="row">
+            <div class="col-3">
+                <div class="row" id="search_bar">
                     <input autofocus type="text" class="form-control" placeholder="Search any word" id="search-input">
                     <button id='search-button'>Search</button>
                 </div>
-                <ul class="col-7" id="quote">
-                    <li id="word-requested"></li>
-                </ul>
-            </div>
-
-            <!-- Previous searches and memes -->
-            <div class="row">
-                <div class="col-5" id="previous_searches">
+                <div class="row" id="recent_searches">
                     <h2>Recent Searches</h2>
                     <ul id="search-list"></ul>
                 </div>
-                <image class="col-7" id="meme"></image>
+            </div>
+
+            <div class="col-9">
+                <div class="row">
+                    <ul class="col" id="quote">
+                        <li id="word-requested"></li>
+                    </ul>
+                </div>
+                <div class="row">
+                    <image id="meme"></image>
+                </div>
             </div>
         </div>
+        </div>
+
     </main>
 
     <!-- Footer -->

@@ -2,6 +2,7 @@
     list-style: none;
 }
 
+
 /* definition box */
 ul li {
     margin-top: 10px;
@@ -20,9 +21,6 @@ footer {
     margin-top: 15px;
 }
 
-#meme {
-    background-color: rgb(245, 245, 247);
-}
 
 /* blockquote */
 #quote {
@@ -34,14 +32,18 @@ footer {
 }
 
 /* previous searches box */
-#previous_searches {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 380px;
+#recent_searches {
     font-size: 18px;
+    margin-top: 50px;
 }
 
 #search-list {
     padding-left: 15px;
 }
+
+/* meme box */
+#meme {
+    height: 450px;
+    background-color: rgb(245, 245, 247);
+}
+
