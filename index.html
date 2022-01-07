@@ -28,7 +28,7 @@
             <!-- Holds search bar and quote box -->
             <div class="row">
                 <div class="col-5" id="search_bar">
-                    <input autofocus type="search" class="form-control" placeholder="Search any word" id="search-input">
+                    <input autofocus type="text" class="form-control" placeholder="Search any word" id="search-input">
                     <button id='search-button'>Search</button>
                 </div>
                 <ul class="col-7" id="quote">
@@ -36,15 +36,11 @@
                 </ul>
             </div>
 
-   <!-- Previous searches and memes -->
+            <!-- Previous searches and memes -->
             <div class="row">
                 <div class="col-5" id="previous_searches">
-                    <h2>Previous Searches</h2>
-                    <li class="list-group-item">Cras justo odio</li>
-                    <li class="list-group-item">Dapibus ac facilisis in</li>
-                    <li class="list-group-item">Morbi leo risus</li>
-                    <li class="list-group-item">Porta ac consectetur ac</li>
-                    <li class="list-group-item">Vestibulum at eros</li>
+                    <h2>Recent Searches</h2>
+                    <ul id="search-list"></ul>
                 </div>
                 <image class="col-7" id="meme"></image>
             </div>
