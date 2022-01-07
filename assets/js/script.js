@@ -1,12 +1,22 @@
-
+var searchHistory = document.getElementById('search-history')
 var quoteBox = document.getElementById("quote");
 var searchInput = document.getElementById('search-input');
 var searchBtn = document.getElementById('search-button')
 
-searchBtn.addEventListener('click', function() {
-	console.log('we clicking');
-	});
+searchBtn.addEventListener('click', function(event) {
+	event.preventDefault();
+	var search = document.getElementById('search-input');
+	
+	localStorage.setItem('history', searches)
+});
 
+function renderSearchHistory() {
+	var history = localStorage.getItem('history')
+	
+	userSearchHistory.textContent = history;
+}
+
+renderSearchHistory();
 
 // Currently to test these functions use the console : example -> urbanDictionary('EnterWord_as_String')
 // Creates a function that uses the fetch request to obtain a word from Urban Dictionary Api and display it on the page
@@ -92,6 +102,5 @@ fetch("https://giphy.p.rapidapi.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&q="+mem
 	console.error(err);
 });
 }
-
 
 giphyRequest("run");
