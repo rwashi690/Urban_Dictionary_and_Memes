@@ -67,6 +67,14 @@ function urbanDictionary(wordRequested) {
 				definitionTag.textContent = data.list[i].definition;
 				quoteBox.appendChild(definitionTag);
 			}
+
+ 				// var definitionTag = document.getElementById("quote");
+                // definitionTag[i].textContent = data.list[i].definition;
+                // quoteBox.appendChild(definitionTag);
+
+    
+
+			
 			// to display the word requested above its definition
 			var displayWord = document.getElementById("word-requested");
 			displayWord.textContent = wordRequested;
