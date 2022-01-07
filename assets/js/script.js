@@ -1,21 +1,42 @@
-var searchHistorySpan = document.getElementById('search-history')
+var searchList = document.getElementById('search-list')
 var quoteBox = document.getElementById("quote");
 var searchInput = document.getElementById('search-input');
-var searchBtn = document.getElementById('search-button')
+var searchBtn = document.getElementById('search-button');
 
+var searchHistory = [];
+
+//The following event listener stores the search input into local storage and then calls the renderSearchHistory function.
 searchBtn.addEventListener('click', function(event) {
 	event.preventDefault();
 	var search = searchInput.value;
 	
-	localStorage.setItem('history', search);
 	renderSearchHistory();
+	localStorage.setItem('history', search);
 });
 
-function renderSearchHistory() {
-	var search = localStorage.getItem('history')
-
-	searchHistorySpan.textContent = search;
+//The following function stores the search history into an array.
+function storeHistory() {
+	
 }
+
+//The following function renders the search history in a list.
+function renderSearchHistory() {
+	
+	for (var i = 0; i < searchHistory.length; i++)
+	var history = searchHistory[i];
+	
+	var li = document.createElement('li');
+	li.textContent = history;
+	li.setAttribute('data-index', i);
+	
+}
+
+//The following function will update the search historyUi
+function updateSearchHistory(){
+	
+}
+
+
 
 
 // Currently to test these functions use the console : example -> urbanDictionary('EnterWord_as_String')
