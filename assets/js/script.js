@@ -6,11 +6,12 @@ var searchBtn = document.getElementById('search-button');
 var currentHistory = [];
 
 //The following event listener stores the search input into local storage.
+//and calls the searchBox function to retrieve information from the two API's based on the input in the search bar.
 searchBtn.addEventListener('click', function (event) {
 	event.preventDefault();
 	var search = searchInput.value;
-	// console.log(search);
 	storeSearchHistory(search);
+	searchBox(search)
 });
 
 //The following function stores the search history and then calls the displayHistory function.
@@ -19,7 +20,6 @@ function storeSearchHistory(search) {
 	// console.log('am i inside of store Search History?')
 	if ('history' in localStorage) {
 		let recentSearches = JSON.parse(localStorage.getItem('history'));
-
 		recentSearches.push(currentHistory);
 
 		localStorage.setItem('history', JSON.stringify(currentHistory));
@@ -41,13 +41,6 @@ function displayHistory() {
 		searchList.appendChild(li);
 	}
 }
-
-//The following event listener calls the searchBox function to retrieve information from the two API's based on the input in the search bar.
-searchBtn.addEventListener('click', function () {
-	// console.log('we clicking');
-	// console.log(searchInput.value)
-	searchBox(searchInput.value);
-});
 
 //The following function uses the fetch request to obtain a word from Urban Dictionary's API.
 function urbanDictionary(wordRequested) {
