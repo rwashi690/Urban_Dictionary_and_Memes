@@ -5,21 +5,21 @@ var searchBtn = document.getElementById('search-button');
 
 var currentHistory = [];
 
-//The following event listener stores the search input into local storage and then calls the renderSearchHistory function.
+//The following event listener stores the search input into local storage.
+//and calls the searchBox function to retrieve information from the two API's based on the input in the search bar.
 searchBtn.addEventListener('click', function (event) {
 	event.preventDefault();
 	var search = searchInput.value;
-	console.log(search);
 	storeSearchHistory(search);
+	searchBox(search)
 });
 
-//The following function renders the search history in a list.
+//The following function stores the search history and then calls the displayHistory function.
 function storeSearchHistory(search) {
 	currentHistory.push(search);
-	console.log('am i inside of store Search History?')
+	// console.log('am i inside of store Search History?')
 	if ('history' in localStorage) {
 		let recentSearches = JSON.parse(localStorage.getItem('history'));
-
 		recentSearches.push(currentHistory);
 
 		localStorage.setItem('history', JSON.stringify(currentHistory));
@@ -30,29 +30,19 @@ function storeSearchHistory(search) {
 	displayHistory();
 }
 
-//The following function will update the search history list.
+//The following function will update the Recent Searches list with previous search inputs.
 function displayHistory() {
 	//this area is for removing the duplicate searches
 	if ('history' in localStorage) {
 	}
 	for (var i = 0; i < currentHistory.length; i++) {
-
 		var li = document.createElement('li');
 		li.textContent = currentHistory[i];
 		searchList.appendChild(li);
 	}
 }
 
-searchBtn.addEventListener('click', function () {
-	console.log('we clicking');
-	console.log(searchInput.value)
-	searchBox(searchInput.value);
-});
-
-
-// Currently to test these functions use the console : example -> urbanDictionary('EnterWord_as_String')
-// Creates a function that uses the fetch request to obtain a word from Urban Dictionary Api and display it on the page
-
+//The following function uses the fetch request to obtain a word from Urban Dictionary's API.
 function urbanDictionary(wordRequested) {
 	fetch("https://mashape-community-urban-dictionary.p.rapidapi.com/define?term=" + wordRequested, {
 		"method": "GET",
@@ -80,31 +70,13 @@ function urbanDictionary(wordRequested) {
 			// to display the word requested above its definition
 			var displayWord = document.getElementById("word-requested");
 			displayWord.textContent = wordRequested;
-
 		})
 		.catch(err => {
 			console.error(err);
 		});
 }
 
-// Modified from https://stackoverflow.com/questions/10982913/javascript-how-to-show-each-element-of-array-on-a-new-line
-
-function splitDefinitions(dates) {
-	if (dates != null) {
-		var dates = dates.split(',');
-		var xxx = dates.length;
-		console.log(xxx);
-		for (var i = 0; i < xxx; i++) {
-			dates[i] = dates[i];
-		}
-	}
-	console.log(dates.join('\r\n'));
-	return dates.join('\r\n');
-}
-
-
-// Creates a function that uses the fetch request to obtain a word from Giphy Api
-
+//The following function uses the fetch request to obtain a word from Giphy's API.
 function giphyRequest(memeRequested) {
 	fetch("https://giphy.p.rapidapi.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&q=" + memeRequested, {
 		"method": "GET",
@@ -126,10 +98,7 @@ function giphyRequest(memeRequested) {
 		});
 }
 
-// Had to remove this functionality for now so it only takes the input from the form
-// urbanDictionary("run")
-// giphyRequest("run");
-
+//The following function calls the two api functions.
 function searchBox(searchInput) {
 	urbanDictionary(searchInput);
 	giphyRequest(searchInput);
