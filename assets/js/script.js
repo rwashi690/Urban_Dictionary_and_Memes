@@ -2,6 +2,7 @@ var searchList = document.getElementById('search-list')
 var quoteBox = document.getElementById("quote");
 var searchInput = document.getElementById('search-input');
 var searchBtn = document.getElementById('search-button');
+
 var currentHistory = [];
 
 //The following event listener stores the search input into local storage and then calls the renderSearchHistory function.
@@ -9,27 +10,12 @@ searchBtn.addEventListener('click', function (event) {
 	event.preventDefault();
 	var search = searchInput.value;
 
-	renderSearchHistory();
-	// 	localStorage.setItem('history', search);
+	storeSearchHistory();
 });
 
-// //The following function stores the search history into an array.
-// function storeHistory() {
-
-// }
-
 //The following function renders the search history in a list.
-function renderSearchHistory() {
+function storeSearchHistory() {
 	currentHistory.push(searchInput.value);
-
-	// for (var i = 0; searchHistory.length; i++) {
-	// 	var history = searchHistory[i];
-
-	// 	var li = document.createElement('li');
-	// 	li.textContent = history;
-	// 	li.setAttribute('data-index', i);
-
-	// }
 
 	if ('history' in localStorage) {
 		let recentSearches = JSON.parse(localStorage.getItem('history'));
@@ -41,11 +27,21 @@ function renderSearchHistory() {
 		const tempArray = currentHistory;
 		localStorage.setItem('history', JSON.stringify(tempArray));
 	}
+	displayHistory();
 }
 
 //The following function will update the search history list.
-function updateSearchHistory() {
+function displayHistory() {
+	// this area is for removing the duplicate searches
+	if ('history' in localStorage) {
+	}
 
+	for (var i = 0; 5; i++) {
+
+		var li = document.createElement('li');
+		li.textContent = currentHistory[i];
+		searchList.appendChild(li);
+	}
 }
 
 searchBtn.addEventListener('click', function () {
