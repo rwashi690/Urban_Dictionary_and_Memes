@@ -1,11 +1,20 @@
+/* definition box */
+ul li {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 
+/* word requested (in quotebox) */
+#word-requested {
+    font-size: 30px;
+    font-weight: bold;
+}
 
 /* header and footer */
 footer {
     height: 100px;
     margin-top: 15px;
 }
-
 
 #meme {
     background-color: rgb(245, 245, 247);
@@ -14,9 +23,9 @@ footer {
 /* blockquote */
 #quote {
     background-color: rgb(230, 220, 220);
-    height: 100px;
     margin-bottom: 15px;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    list-style: none;
     justify-content: center;
 }
