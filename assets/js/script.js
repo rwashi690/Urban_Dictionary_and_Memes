@@ -56,20 +56,25 @@ function reverseChildren(parent) {
 
 //The following function will update the Recent Searches list with previous search inputs.
 function displayHistory() {
-	var li = document.createElement('li');
+	searchList.innerHTML = "";
+	
 	if ("history" in localStorage) {
-		for (var i = 0; i< currentHistory.length; i++) { //var i = arr.length - 1; i >= 0; i--   var i = 0; i< currentHistory.length; i++
+		// defining the startingpoint so that what gets appended is only the last 5
+		startingpoint = Math.max(0,currentHistory.length-5);
+		for (var i = startingpoint; i< currentHistory.length; i++) { //var i = arr.length - 1; i >= 0; i--   var i = 0; i< currentHistory.length; i++
+			var li = document.createElement('li');
 			li.textContent= currentHistory[i];
 			searchList.appendChild(li);
-			reverseChildren(searchList);
+			// reverseChildren(searchList);
 		}
-		// for (var i=0; i<searchList.childNodes.length; i++){
-		// 	if (currentHistory.length >=3){
-		// 		searchList.removeChild(searchList.getElementsByTagName('li')[k+1])
-		// 	}
-		// }
+
 	}
+	
 }
+
+
+
+
 
 //The following function uses the fetch request to obtain a word from Urban Dictionary's API.
 function urbanDictionary(wordRequested) {
@@ -192,7 +197,7 @@ function giphyRequestDefault(memeRequested) {
 		
 		.then(data => {
 			// This deletes previously searched definitions
-			console.log(data);
+ 			console.log(data);
 			var memeBox = document.getElementById("meme");
 			memeBox.setAttribute("src", data.data[0].images.original.url);
 		})
