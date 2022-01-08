@@ -179,11 +179,11 @@ function urbanDictionaryDefault(wordRequested) {
 
 //The following function uses the fetch request to obtain a word from Giphy's API.
 function giphyRequestDefault(memeRequested) {
-	fetch("https://giphy.p.rapidapi.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&q=" + memeRequested, {
+	fetch("https://giphy.p.rapidapi.com/v1/gifs/search?api_key=EgjLqygtqWMNcTpre2tEbkYeGRsJnyND&q=" + memeRequested, {
 		"method": "GET",
 		"headers": {
 			"x-rapidapi-host": "giphy.p.rapidapi.com",
-			"x-rapidapi-key": "dee04f3e4cmsh1ab069023581ac1p1e6822jsn32dcb02e5412"
+			"x-rapidapi-key": "c105441fe2mshaa737e438b3eef3p1e7319jsn6e16aaf3347d"
 		}
 	})
 		.then(response => {
