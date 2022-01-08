@@ -36,15 +36,29 @@ function storeSearchHistory(search) {
 	displayHistory();
 }
 
+// Created a function to display the most recent search first 
+
+function reverseChildren(parent) {
+    for (var i = 1; i < parent.childNodes.length; i++){
+        parent.insertBefore(parent.childNodes[i], parent.firstChild);
+    }
+}
+
+
 //The following function will update the Recent Searches list with previous search inputs.
 function displayHistory() {
-	//this area is for removing the duplicate searches
-	if ('history' in localStorage) {
-	}
-	for (var i = 0; i < currentHistory.length; i++) {
-		var li = document.createElement('li');
-		li.textContent = currentHistory[i];
-		searchList.appendChild(li);
+	var li = document.createElement('li');
+	if ("history" in localStorage) {
+		for (var i = 0; i< currentHistory.length; i++) { //var i = arr.length - 1; i >= 0; i--   var i = 0; i< currentHistory.length; i++
+			li.textContent= currentHistory[i];
+			searchList.appendChild(li);
+			reverseChildren(searchList);
+		}
+		for (var k=0; k<searchList.childNodes.length; k++){
+			if (currentHistory.length >=3){
+				searchList.removeChild(searchList.getElementsByTagName('li')[k+1])
+			}
+		}
 	}
 }
 
