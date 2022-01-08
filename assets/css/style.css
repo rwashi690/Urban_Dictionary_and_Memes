@@ -21,9 +21,6 @@ ul li {
     justify-content: center;
 }
 
-#definition-list::after {
-   display: block;
-}
 
 /* word requested (in quotebox) */
 #word-requested {
@@ -41,6 +38,7 @@ footer {
 #recent_searches {
     font-size: 18px;
     margin-top: 50px;
+    margin-right: 10px;
 }
 
 #search-list {

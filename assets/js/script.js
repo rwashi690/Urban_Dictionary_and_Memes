@@ -61,14 +61,17 @@ function urbanDictionary(wordRequested) {
 			// Create an empty list of definitions
 			var definitions = []
 
+			// This deletes previously searched definitions
+			quoteBox.innerHTML = "<li id='word-requested'></li>"; 
+
 			for (let i = 0; i < 2; i++) {
 				definitions += data.list[i].definition;
-				var definitionTag = document.getElementById("definition-list");
+				var definitionTag = document.createElement("li");
 				definitionTag.textContent = data.list[i].definition;
 				quoteBox.appendChild(definitionTag);
 			}
 			
-			// to display the word requested above its definition
+			// This displays the word requested above its definition
 			var displayWord = document.getElementById("word-requested");
 			displayWord.textContent = wordRequested;
 		})
