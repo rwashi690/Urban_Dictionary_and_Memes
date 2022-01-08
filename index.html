@@ -26,22 +26,23 @@
     <main>
         <div class="container">
             <!-- Holds search bar and recent searches -->
-           <div class="row">
-            <div class="col-5">
-                <div class="row input-group mb-3" id="search_bar">
-                    <input autofocus type="text" class="form-control" placeholder="Search any word" id="search-input">
-                <div class="input-group-append">
-                    <button class="btn btn-outline-secondary" id='search-button'>Search</button>
+            <div class="row">
+                <div class="col-5">
+                    <div class="row input-group mb-3" id="search_bar">
+                        <input autofocus type="text" class="form-control" placeholder="Search any word"
+                            id="search-input">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" id='search-button'>Search</button>
+                        </div>
+                    </div>
+                    <div class="row" id="recent_searches">
+                        <h2>Recent Searches</h2>
+                        <ul id="search-list"></ul>
+                    </div>
                 </div>
-                </div>
-                <div class="row" id="recent_searches">
-                    <h2>Recent Searches</h2>
-                    <ul id="search-list"></ul>
-                </div>
-            </div>
-            
-            <!-- holds definition and gif -->
-            <!-- <div class="col-6">
+
+                <!-- holds definition and gif -->
+                <!-- <div class="col-6">
                 <div class="row">
                     <ul class="col" id="quote">
                         <li id="word-requested"></li>
@@ -54,26 +55,39 @@
         </div>
         </div> -->
 
-            <div class="col-6">
-                <div class="row">
-                    <ul class="col" id="quote">
-                        <li id="word-requested"></li>
-                    </ul>
-                </div>
-                <div class="row">
-                    <image id="meme"></image>
+                <div class="col-6">
+                    <div class="row">
+                        <ul class="col" id="quote">
+                            <li id="word-requested"></li>
+                        </ul>
+                    </div>
+                    <div class="row">
+                        <image id="meme"></image>
+                    </div>
                 </div>
             </div>
-        </div>
         </div>
 
     </main>
 
     <!-- Footer -->
     <footer class="bg-light text-center text-lg-start">
-        <div class="text-center p-3">
-            2022
+        <div class="text-center p-3 credit">
+            <ul>
+                <li>
+                    <h3>API</h3>
+                    <a
+                        href="https://pub.dev/documentation/urbandictionary/latest/#:~:text=Urban%20Dictionary%20API%20(Unofficial),internal)%20API%20or%20RapidAPI%20endpoint.&text=To%20define%20specific%20word%20use%20define(String%20query)%20method.">
+                        Urban Dictionary</a>
+                </li>
+                <li>
+                    <a href="https://developers.giphy.com/docs/api#quick-start-guide">
+                        Giphy</a>
+                </li>
+            </ul>
         </div>
+    </footer>
+    </div>
     </footer>
 
     <!-- Added link to the jQuery library -->
