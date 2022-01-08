@@ -63,17 +63,10 @@ function urbanDictionary(wordRequested) {
 
 			for (let i = 0; i < 2; i++) {
 				definitions += data.list[i].definition;
-				var definitionTag = document.createElement("li");
+				var definitionTag = document.getElementById("definition-list");
 				definitionTag.textContent = data.list[i].definition;
 				quoteBox.appendChild(definitionTag);
 			}
-
- 				// var definitionTag = document.getElementById("quote");
-                // definitionTag[i].textContent = data.list[i].definition;
-                // quoteBox.appendChild(definitionTag);
-
-    
-
 			
 			// to display the word requested above its definition
 			var displayWord = document.getElementById("word-requested");

@@ -13,6 +13,18 @@ ul li {
     margin-bottom: 10px;
 }
 
+#quote {
+    background-color: rgb(230, 220, 220);
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#definition-list::after {
+   display: block;
+}
+
 /* word requested (in quotebox) */
 #word-requested {
     font-size: 30px;
@@ -23,16 +35,6 @@ ul li {
 footer {
     height: 100px;
     margin-top: 15px;
-}
-
-
-/* blockquote */
-#quote {
-    background-color: rgb(230, 220, 220);
-    margin-bottom: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
 
 /* previous searches box */
