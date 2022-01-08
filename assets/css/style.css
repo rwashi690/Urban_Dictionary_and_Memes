@@ -13,6 +13,15 @@ ul li {
     margin-bottom: 10px;
 }
 
+#quote {
+    background-color: rgb(230, 220, 220);
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
 /* word requested (in quotebox) */
 #word-requested {
     font-size: 30px;
@@ -25,20 +34,11 @@ footer {
     margin-top: 15px;
 }
 
-
-/* blockquote */
-#quote {
-    background-color: rgb(230, 220, 220);
-    margin-bottom: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
 /* previous searches box */
 #recent_searches {
     font-size: 18px;
     margin-top: 50px;
+    margin-right: 10px;
 }
 
 #search-list {
