@@ -9,8 +9,8 @@ var currentHistory = [];
 // Display Default Image once the DOM is loaded
 
 document.addEventListener('DOMContentLoaded', function(event) {
-    giphyRequestDefault("run")
-	urbanDictionaryDefault("run")
+    giphyRequestDefault("pikachu")
+	urbanDictionaryDefault("pikachu")
 });
 
 
