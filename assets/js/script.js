@@ -14,6 +14,12 @@ searchBtn.addEventListener('click', function (event) {
 	searchBox(search)
 });
 
+// function for clearing the search bar 
+function clearSearch() { 
+	searchInput.value = ('');
+}
+searchBtn.addEventListener('click', clearSearch); 
+
 //The following function stores the search history and then calls the displayHistory function.
 function storeSearchHistory(search) {
 	currentHistory.push(search);

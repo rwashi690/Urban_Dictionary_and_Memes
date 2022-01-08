@@ -27,10 +27,12 @@
         <div class="container">
             <!-- Holds search bar and recent searches -->
            <div class="row">
-            <div class="col-3">
-                <div class="row" id="search_bar">
+            <div class="col-5">
+                <div class="row input-group mb-3" id="search_bar">
                     <input autofocus type="text" class="form-control" placeholder="Search any word" id="search-input">
-                    <button id='search-button'>Search</button>
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" id='search-button'>Search</button>
+                </div>
                 </div>
                 <div class="row" id="recent_searches">
                     <h2>Recent Searches</h2>
@@ -52,7 +54,7 @@
         </div>
         </div> -->
 
-            <div class="col-9">
+            <div class="col-6">
                 <div class="row">
                     <ul class="col" id="quote">
                         <li id="word-requested">run</li>
