@@ -29,16 +29,27 @@ function storeSearchHistory(search) {
 	}
 	displayHistory();
 }
+function removePreviousSearches(){
+	const tags = [...document.querySelectorAll('#search-input > li')];
+	const texts = new Set(tags.map(x => x.innerHTML));
+	tags.forEach(tag => {
+	  if(texts.has(tag.innerHTML)){
+		texts.delete(tag.innerHTML);
+	  }
+	  else{
+		tag.remove()
+	  }
+	})
+}
 
 //The following function will update the Recent Searches list with previous search inputs.
 function displayHistory() {
-	//this area is for removing the duplicate searches
-	if ('history' in localStorage) {
-	}
-	for (var i = 0; i < currentHistory.length; i++) {
-		var li = document.createElement('li');
-		li.textContent = currentHistory[i];
-		searchList.appendChild(li);
+	var li = document.createElement('li');
+	if ("history" in localStorage) {
+		for (var i = 0; i< currentHistory.length; i++) {
+			li.textContent= currentHistory[i];
+			searchList.appendChild(li);
+		}
 	}
 }
 
