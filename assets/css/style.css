@@ -30,10 +30,14 @@ ul li {
 
 /* header and footer */
 footer {
-    height: 100px;
+    height: auto;
     margin-top: 15px;
+    line-height: 15px;
 }
 
+h3 {
+    font-size: 24;
+}
 /* previous searches box */
 #recent_searches {
     font-size: 18px;
